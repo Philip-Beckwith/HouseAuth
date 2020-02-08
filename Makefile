@@ -4,7 +4,7 @@ TARGET = secure_house
 all: $(TARGET)
 
 $(TARGET): HouseAuth.o Interpreter.o House.o Lock.o 
-	g++ -o $(TARGET) HouseAuth.o Interpreter.o
+	g++ -o $(TARGET) HouseAuth.o Interpreter.o House.o Lock.o
 
 HouseAuth.o : HouseAuth.cpp
 	g++ -c HouseAuth.cpp
@@ -21,3 +21,4 @@ Lock.o : Lock.cpp
 clean:
 	rm $(TARGET)
 	rm *.o
+
