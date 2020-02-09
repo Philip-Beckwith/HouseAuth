@@ -13,6 +13,9 @@ bool Lock::turnKey(std::string user){
 }
 
 bool Lock::checkKey(){
+    if(curentClient.key.compare(FIREFIGHTER_KEY) == 0){
+        return true;
+    }
     for(int i =0; i<keys.size(); i++){
         if(curentClient.key.compare(keys[i])==0){
             return true;
