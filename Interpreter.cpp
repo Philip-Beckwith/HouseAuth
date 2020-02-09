@@ -84,6 +84,6 @@ std::vector<std::string> Interpreter::splitInstructions(std::string instruction)
 
 void Interpreter::preconditions(bool isValid){
   if(!isValid){
-    throw;
+    throw "ERROR";
   }
 }

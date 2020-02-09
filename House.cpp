@@ -24,7 +24,7 @@ void House::turnKey(std::string user){
 }
 
 void House::enterHouse(std::string user){
-    if(lock.isOpen()){
+    if(lock.isOpen() && user.compare(lock.getUser())==0){
         peopleInHouse.push_back(user);
         lock.lock();
         printf("ACCESS ALLOWED\n");
@@ -54,15 +54,15 @@ void House::changeLocks(std::string user,std::vector<std::string> locks){
 
 void House::leaveHouse(std::string user){
     if(userIsInside(user)){
-        
-        printf("OK");
+        removeUser(user);
+        printf("OK\n");
     }else{
         printf("%s NOT HERE\n", user.c_str());
     }
 }
 
 bool House::userIsInside(std::string user){
-    if(userIsInside(user) == -1){return false;}
+    if(userIndex(user) == -1){return false;}
     return true;
 }
 
