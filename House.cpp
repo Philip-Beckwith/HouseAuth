@@ -39,7 +39,7 @@ void House::whosInside(){
         for(int i=0; i<peopleInHouse.size()-1; i++){
             printf("%s, ", peopleInHouse[i].c_str());
         }
-        printf("%s",peopleInHouse[peopleInHouse.size()-1].c_str());
+        printf("%s\n",peopleInHouse[peopleInHouse.size()-1].c_str());
     }
 }
 void House::changeLocks(std::string user,std::vector<std::string> locks){
@@ -48,7 +48,7 @@ void House::changeLocks(std::string user,std::vector<std::string> locks){
         printf("OK\n");
     }
     else{
-        printf("ACCESS DENIED");
+        printf("ACCESS DENIED\n");
     }
 }
 
@@ -57,7 +57,7 @@ void House::leaveHouse(std::string user){
         
         printf("OK");
     }else{
-        printf("%s NOT HERE", user.c_str());
+        printf("%s NOT HERE\n", user.c_str());
     }
 }
 

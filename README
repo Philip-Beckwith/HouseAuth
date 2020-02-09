@@ -2,19 +2,23 @@
 House Auth is an implementation of secure_house. 
 House auth is designed to only allow users with valid keys into the home.
 To initialize house auth an owner, as well as an initial set of keys must be passed to the program at start up.
-To enter a house the user must 
-* INSERT KEY <user_name> <key>
-* TURN KEY <user_name>
-* ENTER HOUSE <user_name>
+```./secure_house <owner_name> <key_1> <key_2> ... <key_n> ```
 
+To enter a house the user must:
+``` 
+INSERT KEY <user_name> <key>
+TURN KEY <user_name>  
+ENTER HOUSE <user_name>
+``` 
 Other users can interface with the house without interrupting other users from entering the house. This means that house auth can take multiple instructions between a user inserting the key and turning the key. However it should be noted that the house can only have one key inserted at a time. Meaning that if another user inserts his/her key, then the previous user will not be able to continue his/her workflow. 
 
 House Auth has functions related to who is in the house and exiting the house. While entering is regulated, anyone in the house may exit at any time.
-* WHO'S INSIDE?
-* LEAVE HOUSE <user_name>
-
+```
+WHO'S INSIDE?
+LEAVE HOUSE <user_name>
+```
 The owner of the house can also change the locks. However, the owner must be inside the house to do so. No other users can change locks. 
-* CHANGE LOCKS <user_name> <key_1> <key_2> ... <key_n>
+``` CHANGE LOCKS <user_name> <key_1> <key_2> ... <key_n> ```
 
 The responsibility of the workflow is split between three classes:
 * InstructionInterpreter
